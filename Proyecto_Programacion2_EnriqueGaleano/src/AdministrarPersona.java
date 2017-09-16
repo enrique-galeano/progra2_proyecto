@@ -45,7 +45,7 @@ public class AdministrarPersona implements Serializable{
 		this.pathLocation = pathLocation;
 	}
 
-	public void cargarArchivo() {
+	public ArrayList<usuario> cargarArchivo() {
 		try {
 			persona = new ArrayList();
 			usuario temp;
@@ -63,6 +63,7 @@ public class AdministrarPersona implements Serializable{
 			}//End if
 		} catch (Exception e) {
 		}
+		return persona;
 	}
 
 	public void escribirArchivo() {

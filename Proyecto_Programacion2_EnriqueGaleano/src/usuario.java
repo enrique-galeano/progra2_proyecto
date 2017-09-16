@@ -1,4 +1,5 @@
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import javax.swing.Icon;
@@ -13,7 +14,7 @@ import javax.swing.Icon;
  *
  * @author enriquejosegaleanotalavera
  */
-public class usuario {
+public class usuario implements Serializable{
 	public final long SerializableUID = 333L;
 	private String nombreCompleto;
 	private String nickname;
@@ -22,6 +23,9 @@ public class usuario {
 	private Date fechaDeNacimiento;
 	private Icon fotografia;
 
+	usuario() {
+	}
+	
 
 	public usuario(String nombreCompleto, String nickname, String password, String pais, Date fechaDeNacimiento, Icon fotografia) {
 		this.nombreCompleto = nombreCompleto;
@@ -31,6 +35,8 @@ public class usuario {
 		this.fechaDeNacimiento = fechaDeNacimiento;
 		this.fotografia = fotografia;
 	}
+
+
 
 	public Icon getFotografia() {
 		return fotografia;
