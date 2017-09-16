@@ -8,6 +8,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
+import javax.swing.DefaultListModel;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
@@ -30,6 +31,8 @@ public class Principal extends javax.swing.JFrame {
 	 */
 	public Principal() {
 		initComponents();
+		
+		
 	}
 
 	/**
@@ -42,6 +45,13 @@ public class Principal extends javax.swing.JFrame {
         jTextField3 = new javax.swing.JTextField();
         jTextField5 = new javax.swing.JTextField();
         ExperiencaUsuario = new javax.swing.JDialog();
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jl_usuarios = new javax.swing.JList();
+        jButton4 = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -63,22 +73,89 @@ public class Principal extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
+        Abrir = new javax.swing.JMenuItem();
 
         jTextField3.setText("jTextField3");
 
         jTextField5.setText("jTextField5");
 
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 991, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 587, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("tab1", jPanel1);
+
+        jl_usuarios.setModel(new DefaultListModel());
+        jScrollPane1.setViewportView(jl_usuarios);
+
+        jButton4.setText("Cargar Usuarios");
+        jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton4MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(147, 147, 147)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(168, 168, 168)
+                        .addComponent(jButton4)))
+                .addContainerGap(663, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(55, 55, 55)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(38, 38, 38)
+                .addComponent(jButton4)
+                .addContainerGap(116, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Solicitud de Amistad", jPanel2);
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 991, Short.MAX_VALUE)
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 587, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("tab3", jPanel3);
+
         javax.swing.GroupLayout ExperiencaUsuarioLayout = new javax.swing.GroupLayout(ExperiencaUsuario.getContentPane());
         ExperiencaUsuario.getContentPane().setLayout(ExperiencaUsuarioLayout);
         ExperiencaUsuarioLayout.setHorizontalGroup(
             ExperiencaUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 831, Short.MAX_VALUE)
+            .addGroup(ExperiencaUsuarioLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jTabbedPane1)
+                .addContainerGap())
         );
         ExperiencaUsuarioLayout.setVerticalGroup(
             ExperiencaUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 635, Short.MAX_VALUE)
+            .addGroup(ExperiencaUsuarioLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jTabbedPane1)
+                .addContainerGap())
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -130,21 +207,13 @@ public class Principal extends javax.swing.JFrame {
         });
         jMenu1.add(jMenuItem1);
 
-        jMenuItem2.setText("Guardar Como");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+        Abrir.setText("Abrir");
+        Abrir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
+                AbrirActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem2);
-
-        jMenuItem3.setText("Abrir");
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
-            }
-        });
-        jMenu1.add(jMenuItem3);
+        jMenu1.add(Abrir);
 
         jMenuBar1.add(jMenu1);
 
@@ -275,9 +344,10 @@ public class Principal extends javax.swing.JFrame {
 		}*/
 		String admin = "admin";
 		String contra = "root";
-		AdministrarPersona ad= new AdministrarPersona("./usuarios.cbm");
+		AdministrarPersona ad= new AdministrarPersona(direccion);
 		ad.cargarArchivo();
 		ArrayList<usuario> temp = ad.getListaDeUsuario();
+		System.out.println(temp);
 		for (usuario tempd : temp) {
 			System.out.println(tempd.getNickname() + "---" + tempd.getPassword());
 			if (tempd.getNickname().equals(jt_usuario.getText()) && (tempd.getPassword().equals(jp_contraseña.getText()))) {
@@ -289,75 +359,19 @@ public class Principal extends javax.swing.JFrame {
 				ExperiencaUsuario.setLocationRelativeTo(this);
 				ExperiencaUsuario.setVisible(true);
 
-			} else {
-				JOptionPane.showMessageDialog(this, "Su usarios no existe ");
-			}
-
+			} 
 		}
     }//GEN-LAST:event_jButton1MouseClicked
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
 
 		aP.cargarArchivo();
-		ArrayList<usuario> temp = aP.getListaDeUsuario();
-		temp.add(u);
-		aP.setListaDeUsuario(temp);
+		//ArrayList<usuario> temp = aP.getListaDeUsuario();
+		//temp.add(u);
+		aP.setListaDeUsuario(listaDeUsuarios);
 		aP.escribirArchivo();
 
     }//GEN-LAST:event_jMenuItem1ActionPerformed
-
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-		// TODO add your handling code here:
-		JFileChooser fc = new JFileChooser();
-		fc.setFileFilter(new FileNameExtensionFilter("usuarios", "cbm"));
-		int opc = fc.showOpenDialog(this);
-		if (opc == JFileChooser.APPROVE_OPTION) {
-			File f = fc.getSelectedFile();
-			direccion = f.getPath();
-			System.out.println(direccion);
-			try {
-				aP.cargarArchivo();
-				listaDeUsuarios = aP.getListaDeUsuario();
-
-				JOptionPane.showMessageDialog(this, "Archivo abierto con exito");
-			} catch (Exception e) {
-				e.printStackTrace();
-				JOptionPane.showMessageDialog(this, "Ocurrio un error");
-			}
-
-		}
-
-    }//GEN-LAST:event_jMenuItem3ActionPerformed
-
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-		// TODO add your handling code here:JFileChooser jfc = new JFileChooser();
-		FileNameExtensionFilter fil = new FileNameExtensionFilter("usuarios", ".cbm");
-		JFileChooser jfc = new JFileChooser();
-		jfc.setFileFilter(fil);
-		int seleccion = jfc.showSaveDialog(this);
-		FileWriter fw = null;
-		File fichero = null;
-		if (seleccion == JFileChooser.APPROVE_OPTION) {
-			try {
-				if (jfc.getFileFilter().getDescription().equals("usuarios")) {
-					direccion = jfc.getSelectedFile().getPath() + ".cbm";
-					fichero = new File(direccion);
-					aP.setListaDeUsuario(listaDeUsuarios);
-					aP.escribirArchivo();
-				} else {
-					fichero = jfc.getSelectedFile();
-				}
-				fw = new FileWriter(fichero);
-				JOptionPane.showMessageDialog(this, "Archivo guardado exitosamente");
-			} catch (Exception e) {
-			}
-			try {
-				fw.close();
-			} catch (Exception e) {
-			}
-			JOptionPane.showMessageDialog(this, " nuevo Guardado con exito");
-		}
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
 		// TODO add your handling code here:
@@ -366,12 +380,15 @@ public class Principal extends javax.swing.JFrame {
 		String contra;
 		String pais;
 		Date fecha;
+		
 		nombre = jt_nombre.getText();
 		nick = jt_nickN.getText();
 		pais = (String) cb_paises.getSelectedItem();
 		fecha = jd_fecha.getDate();
+		
 		u = new usuario(nombre, nick, jp_contra_login.getText(), pais, fecha, lb_imagenUsuario.getIcon());
 		listaDeUsuarios.add(u);
+		
 		JOptionPane.showMessageDialog(this, "Se agrego con exito su usuario" + new Date());
 		jt_nombre.setText("");
 		jt_nickN.setText("");
@@ -381,6 +398,37 @@ public class Principal extends javax.swing.JFrame {
 		lb_imagenUsuario.setIcon(null);
 
     }//GEN-LAST:event_jButton2MouseClicked
+
+    private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
+        // TODO add your handling code here:
+		DefaultListModel mod = (DefaultListModel) jl_usuarios.getModel();
+        for (usuario lista : listaDeUsuarios) {
+			System.out.println("entra");
+			System.out.println(lista.getNickname());
+			mod.addElement(lista.getNickname());
+		}
+    }//GEN-LAST:event_jButton4MouseClicked
+
+    private void AbrirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AbrirActionPerformed
+        // TODO add your handling code here:
+		JFileChooser fc = new JFileChooser();
+        fc.setFileFilter(new FileNameExtensionFilter("usuarios", "cbm"));
+        int opc = fc.showOpenDialog(this);
+        if (opc == JFileChooser.APPROVE_OPTION) {
+            File f = fc.getSelectedFile();
+            direccion = f.getPath();
+            try {
+                aP.cargarArchivo();
+                listaDeUsuarios = aP.getListaDeUsuario();
+                
+                JOptionPane.showMessageDialog(this, "Archivo abierto con exito");
+            } catch (Exception e) {
+                e.printStackTrace();
+                JOptionPane.showMessageDialog(this, "Ocurrio un error");
+            }
+            
+        }
+    }//GEN-LAST:event_AbrirActionPerformed
 
 	/**
 	 * @param args the command line arguments
@@ -418,11 +466,13 @@ public class Principal extends javax.swing.JFrame {
 	}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem Abrir;
     private javax.swing.JDialog ExperiencaUsuario;
     private javax.swing.JComboBox cb_paises;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -433,11 +483,15 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField5;
     private com.toedter.calendar.JDateChooser jd_fecha;
+    private javax.swing.JList jl_usuarios;
     private javax.swing.JPasswordField jp_contra_login;
     private javax.swing.JPasswordField jp_contraseña;
     private javax.swing.JTextField jt_nickN;
