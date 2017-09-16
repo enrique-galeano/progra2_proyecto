@@ -24,8 +24,6 @@ public class usuario implements Serializable{
 	private Icon fotografia;
 	ArrayList request = new ArrayList();
 
-	usuario() {
-	}
 	
 
 	public usuario(String nombreCompleto, String nickname, String password, String pais, Date fechaDeNacimiento, Icon fotografia) {
@@ -35,6 +33,10 @@ public class usuario implements Serializable{
 		this.pais = pais;
 		this.fechaDeNacimiento = fechaDeNacimiento;
 		this.fotografia = fotografia;
+	}
+
+	usuario() {
+		//throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
 	}
 
 	public ArrayList getRequest() {

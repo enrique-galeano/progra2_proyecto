@@ -360,7 +360,7 @@ public class Principal extends javax.swing.JFrame {
 		 } catch (Exception e) {
 		 e.printStackTrace();
 		 }*/
-	String admin = "admin";
+		String admin = "admin";
 		String contra = "root";
 		AdministrarPersona ad= new AdministrarPersona(direccion);
 		ad.cargarArchivo();
@@ -383,7 +383,7 @@ public class Principal extends javax.swing.JFrame {
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
 
-		try {
+
 		aP.cargarArchivo();
 		//ArrayList<usuario> temp = aP.getListaDeUsuario();
 		//temp.add(u);
@@ -391,10 +391,7 @@ public class Principal extends javax.swing.JFrame {
 		aP.escribirArchivo();
 		JOptionPane.showMessageDialog(this, "Se guardo exitosamente");
 			
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
+	
 		
 
     }//GEN-LAST:event_jMenuItem1ActionPerformed
