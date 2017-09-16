@@ -31,8 +31,7 @@ public class Principal extends javax.swing.JFrame {
 	 */
 	public Principal() {
 		initComponents();
-		
-		
+
 	}
 
 	/**
@@ -51,6 +50,8 @@ public class Principal extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jl_usuarios = new javax.swing.JList();
         jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -102,28 +103,44 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
+        jButton5.setText("Agregar para enviar solicitud");
+        jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton5MouseClicked(evt);
+            }
+        });
+
+        jLabel8.setText("Haga click en la lista de usuarios");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel8)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(147, 147, 147)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(168, 168, 168)
-                        .addComponent(jButton4)))
-                .addContainerGap(663, Short.MAX_VALUE))
+                        .addContainerGap()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton5)
+                            .addComponent(jButton4))))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(561, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(55, 55, 55)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38)
-                .addComponent(jButton4)
-                .addContainerGap(116, Short.MAX_VALUE))
+                .addGap(77, 77, 77)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel8)
+                        .addGap(77, 77, 77)
+                        .addComponent(jButton4)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton5))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(161, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Solicitud de Amistad", jPanel2);
@@ -147,7 +164,7 @@ public class Principal extends javax.swing.JFrame {
             ExperiencaUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ExperiencaUsuarioLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTabbedPane1)
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1012, Short.MAX_VALUE)
                 .addContainerGap())
         );
         ExperiencaUsuarioLayout.setVerticalGroup(
@@ -327,22 +344,23 @@ public class Principal extends javax.swing.JFrame {
 
 		//AdministrarPersona ad = new AdministrarPersona(direccion);
 		/*try {
-			for (usuario ll : listaDeUsuarios) {
-				if (ll.getNickname().equals(jt_usuario.getText())) {
-					if (ll.getPassword().equals(jp_contraseña.getText())) {
-						//nick = ll.getNickname();
-						ExperiencaUsuario.setModal(true);
-						ExperiencaUsuario.pack();
-						ExperiencaUsuario.setLocationRelativeTo(this);
-						ExperiencaUsuario.setVisible(true);
-					}
-				}
-			}
+		 for (usuario ll : listaDeUsuarios) {
+		 System.out.println(ll.getNickname());
+		 if (ll.getNickname().equals(jt_usuario.getText())) {
+		 if (ll.getPassword().equals(jp_contraseña.getText())) {
+		 //nick = ll.getNickname();
+		 ExperiencaUsuario.setModal(true);
+		 ExperiencaUsuario.pack();
+		 ExperiencaUsuario.setLocationRelativeTo(this);
+		 ExperiencaUsuario.setVisible(true);
+		 }
+		 }
+		 }
 
-		} catch (Exception e) {
-			e.printStackTrace();
-		}*/
-		String admin = "admin";
+		 } catch (Exception e) {
+		 e.printStackTrace();
+		 }*/
+	String admin = "admin";
 		String contra = "root";
 		AdministrarPersona ad= new AdministrarPersona(direccion);
 		ad.cargarArchivo();
@@ -365,11 +383,19 @@ public class Principal extends javax.swing.JFrame {
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
 
+		try {
 		aP.cargarArchivo();
 		//ArrayList<usuario> temp = aP.getListaDeUsuario();
 		//temp.add(u);
 		aP.setListaDeUsuario(listaDeUsuarios);
 		aP.escribirArchivo();
+		JOptionPane.showMessageDialog(this, "Se guardo exitosamente");
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		
 
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
@@ -380,15 +406,17 @@ public class Principal extends javax.swing.JFrame {
 		String contra;
 		String pais;
 		Date fecha;
-		
+
 		nombre = jt_nombre.getText();
 		nick = jt_nickN.getText();
 		pais = (String) cb_paises.getSelectedItem();
 		fecha = jd_fecha.getDate();
-		
+
 		u = new usuario(nombre, nick, jp_contra_login.getText(), pais, fecha, lb_imagenUsuario.getIcon());
 		listaDeUsuarios.add(u);
-		
+		System.out.println("esta lleno? " + u);
+		System.out.println("esta lleno x2? " + listaDeUsuarios);
+
 		JOptionPane.showMessageDialog(this, "Se agrego con exito su usuario" + new Date());
 		jt_nombre.setText("");
 		jt_nickN.setText("");
@@ -400,35 +428,58 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2MouseClicked
 
     private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
-        // TODO add your handling code here:
-		DefaultListModel mod = (DefaultListModel) jl_usuarios.getModel();
-        for (usuario lista : listaDeUsuarios) {
-			System.out.println("entra");
-			System.out.println(lista.getNickname());
-			mod.addElement(lista.getNickname());
+		// TODO add your handling code here:
+		try {
+			DefaultListModel mod = (DefaultListModel) jl_usuarios.getModel();
+			for (usuario lista : listaDeUsuarios) {
+				if (!lista.getNickname().equals(global.getNickname())) {
+					System.out.println(lista.getNickname());
+					mod.addElement(lista.getNickname());
+				}
+
+			}
+		} catch (Exception e) {
+			JOptionPane.showMessageDialog(ExperiencaUsuario, "Ocurrio un error");
 		}
     }//GEN-LAST:event_jButton4MouseClicked
 
     private void AbrirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AbrirActionPerformed
-        // TODO add your handling code here:
+		// TODO add your handling code here:
 		JFileChooser fc = new JFileChooser();
-        fc.setFileFilter(new FileNameExtensionFilter("usuarios", "cbm"));
-        int opc = fc.showOpenDialog(this);
-        if (opc == JFileChooser.APPROVE_OPTION) {
-            File f = fc.getSelectedFile();
-            direccion = f.getPath();
-            try {
-                aP.cargarArchivo();
-                listaDeUsuarios = aP.getListaDeUsuario();
-                
-                JOptionPane.showMessageDialog(this, "Archivo abierto con exito");
-            } catch (Exception e) {
-                e.printStackTrace();
-                JOptionPane.showMessageDialog(this, "Ocurrio un error");
-            }
-            
-        }
+		fc.setFileFilter(new FileNameExtensionFilter("usuarios", "cbm"));
+		int opc = fc.showOpenDialog(this);
+		if (opc == JFileChooser.APPROVE_OPTION) {
+			File f = fc.getSelectedFile();
+			direccion = f.getPath();
+			try {
+				aP.cargarArchivo();
+				listaDeUsuarios = aP.getListaDeUsuario();
+
+				JOptionPane.showMessageDialog(this, "Archivo abierto con exito");
+			} catch (Exception e) {
+				e.printStackTrace();
+				JOptionPane.showMessageDialog(this, "Ocurrio un error");
+			}
+
+		}
     }//GEN-LAST:event_AbrirActionPerformed
+
+    private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
+		// TODO add your handling code here:
+		try {
+			DefaultListModel model = (DefaultListModel) jl_usuarios.getModel();
+			String UsuarioSoli, UsuarioRequest;
+			UsuarioSoli = lp;
+			UsuarioRequest = jl_usuarios.getSelectedValue().toString();
+			for (usuario hasta : listaDeUsuarios) {
+				if (u.getNickname().equals(UsuarioRequest)) {
+					hasta.request.add(UsuarioRequest);
+				}
+			}
+		} catch (Exception e) {
+
+		}
+    }//GEN-LAST:event_jButton5MouseClicked
 
 	/**
 	 * @param args the command line arguments
@@ -473,6 +524,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -480,6 +532,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
@@ -504,8 +557,8 @@ public class Principal extends javax.swing.JFrame {
 	AdministrarPersona aP = new AdministrarPersona(direccion);
 	usuario u = new usuario();
 	usuario global;
+	String lp;
 	usuario global1;
 	usuario agregarUsuario;
 	usuario aregarUsuario2;
-
 }

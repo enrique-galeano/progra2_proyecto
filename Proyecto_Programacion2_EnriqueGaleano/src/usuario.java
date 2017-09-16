@@ -22,6 +22,7 @@ public class usuario implements Serializable{
 	private String pais;
 	private Date fechaDeNacimiento;
 	private Icon fotografia;
+	ArrayList request = new ArrayList();
 
 	usuario() {
 	}
@@ -34,6 +35,14 @@ public class usuario implements Serializable{
 		this.pais = pais;
 		this.fechaDeNacimiento = fechaDeNacimiento;
 		this.fotografia = fotografia;
+	}
+
+	public ArrayList getRequest() {
+		return request;
+	}
+
+	public void setRequest(ArrayList request) {
+		this.request = request;
 	}
 
 
