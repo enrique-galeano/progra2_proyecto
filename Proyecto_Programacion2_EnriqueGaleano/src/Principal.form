@@ -12,6 +12,21 @@
         <Property name="text" type="java.lang.String" value="jTextField5"/>
       </Properties>
     </Component>
+    <Container class="javax.swing.JDialog" name="ExperiencaUsuario">
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <EmptySpace min="0" pref="831" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <EmptySpace min="0" pref="635" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+    </Container>
     <Menu class="javax.swing.JMenuBar" name="jMenuBar1">
       <SubComponents>
         <Menu class="javax.swing.JMenu" name="jMenu1">
@@ -75,11 +90,11 @@
               <EmptySpace min="74" pref="74" max="-2" attributes="0"/>
               <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="61" pref="61" max="-2" attributes="0"/>
-              <Component id="jTextField4" min="-2" pref="182" max="-2" attributes="0"/>
+              <Component id="jt_usuario" min="-2" pref="182" max="-2" attributes="0"/>
               <EmptySpace min="54" pref="54" max="-2" attributes="0"/>
               <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="30" pref="30" max="-2" attributes="0"/>
-              <Component id="jPasswordField2" min="-2" pref="220" max="-2" attributes="0"/>
+              <Component id="jp_contraseña" min="-2" pref="220" max="-2" attributes="0"/>
               <EmptySpace min="32" pref="32" max="-2" attributes="0"/>
               <Component id="jButton1" min="-2" max="-2" attributes="0"/>
           </Group>
@@ -96,7 +111,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jt_nombre" min="-2" pref="268" max="-2" attributes="0"/>
                   <Component id="jt_nickN" min="-2" pref="268" max="-2" attributes="0"/>
-                  <Component id="jp_contra" min="-2" pref="268" max="-2" attributes="0"/>
+                  <Component id="jp_contra_login" min="-2" pref="268" max="-2" attributes="0"/>
                   <Component id="cb_paises" min="-2" max="-2" attributes="0"/>
                   <Component id="jd_fecha" min="-2" pref="268" max="-2" attributes="0"/>
               </Group>
@@ -120,18 +135,18 @@
                       <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
                       <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="jTextField4" min="-2" max="-2" attributes="0"/>
+                  <Component id="jt_usuario" min="-2" max="-2" attributes="0"/>
                   <Group type="102" attributes="0">
                       <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
                       <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="jPasswordField2" min="-2" max="-2" attributes="0"/>
+                  <Component id="jp_contraseña" min="-2" max="-2" attributes="0"/>
                   <Group type="102" attributes="0">
                       <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
                       <Component id="jButton1" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace min="43" pref="43" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace min="17" pref="17" max="-2" attributes="0"/>
@@ -151,7 +166,7 @@
                       <EmptySpace min="57" pref="57" max="-2" attributes="0"/>
                       <Component id="jt_nickN" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="52" pref="52" max="-2" attributes="0"/>
-                      <Component id="jp_contra" min="-2" max="-2" attributes="0"/>
+                      <Component id="jp_contra_login" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="44" pref="44" max="-2" attributes="0"/>
                       <Component id="cb_paises" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="51" pref="51" max="-2" attributes="0"/>
@@ -201,7 +216,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="jt_nickN">
     </Component>
-    <Component class="javax.swing.JPasswordField" name="jp_contra">
+    <Component class="javax.swing.JPasswordField" name="jp_contra_login">
     </Component>
     <Component class="javax.swing.JComboBox" name="cb_paises">
       <Properties>
@@ -408,9 +423,9 @@
     </Component>
     <Component class="com.toedter.calendar.JDateChooser" name="jd_fecha">
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField4">
+    <Component class="javax.swing.JTextField" name="jt_usuario">
     </Component>
-    <Component class="javax.swing.JPasswordField" name="jPasswordField2">
+    <Component class="javax.swing.JPasswordField" name="jp_contrase&#xf1;a">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel6">
       <Properties>

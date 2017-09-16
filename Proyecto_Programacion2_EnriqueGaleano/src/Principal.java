@@ -41,6 +41,7 @@ public class Principal extends javax.swing.JFrame {
 
         jTextField3 = new javax.swing.JTextField();
         jTextField5 = new javax.swing.JTextField();
+        ExperiencaUsuario = new javax.swing.JDialog();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -48,11 +49,11 @@ public class Principal extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jt_nombre = new javax.swing.JTextField();
         jt_nickN = new javax.swing.JTextField();
-        jp_contra = new javax.swing.JPasswordField();
+        jp_contra_login = new javax.swing.JPasswordField();
         cb_paises = new javax.swing.JComboBox();
         jd_fecha = new com.toedter.calendar.JDateChooser();
-        jTextField4 = new javax.swing.JTextField();
-        jPasswordField2 = new javax.swing.JPasswordField();
+        jt_usuario = new javax.swing.JTextField();
+        jp_contraseña = new javax.swing.JPasswordField();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
@@ -68,6 +69,17 @@ public class Principal extends javax.swing.JFrame {
         jTextField3.setText("jTextField3");
 
         jTextField5.setText("jTextField5");
+
+        javax.swing.GroupLayout ExperiencaUsuarioLayout = new javax.swing.GroupLayout(ExperiencaUsuario.getContentPane());
+        ExperiencaUsuario.getContentPane().setLayout(ExperiencaUsuarioLayout);
+        ExperiencaUsuarioLayout.setHorizontalGroup(
+            ExperiencaUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 831, Short.MAX_VALUE)
+        );
+        ExperiencaUsuarioLayout.setVerticalGroup(
+            ExperiencaUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 635, Short.MAX_VALUE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -146,11 +158,11 @@ public class Principal extends javax.swing.JFrame {
                 .addGap(74, 74, 74)
                 .addComponent(jLabel6)
                 .addGap(61, 61, 61)
-                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jt_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(54, 54, 54)
                 .addComponent(jLabel7)
                 .addGap(30, 30, 30)
-                .addComponent(jPasswordField2, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jp_contraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32)
                 .addComponent(jButton1))
             .addGroup(layout.createSequentialGroup()
@@ -165,7 +177,7 @@ public class Principal extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jt_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jt_nickN, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jp_contra, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jp_contra_login, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cb_paises, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jd_fecha, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(72, 72, 72)
@@ -184,15 +196,15 @@ public class Principal extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(6, 6, 6)
                         .addComponent(jLabel6))
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jt_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(6, 6, 6)
                         .addComponent(jLabel7))
-                    .addComponent(jPasswordField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jp_contraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(1, 1, 1)
                         .addComponent(jButton1)))
-                .addGap(43, 43, 43)
+                .addGap(49, 49, 49)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(17, 17, 17)
@@ -211,7 +223,7 @@ public class Principal extends javax.swing.JFrame {
                         .addGap(57, 57, 57)
                         .addComponent(jt_nickN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(52, 52, 52)
-                        .addComponent(jp_contra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jp_contra_login, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(44, 44, 44)
                         .addComponent(cb_paises, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(51, 51, 51)
@@ -244,7 +256,44 @@ public class Principal extends javax.swing.JFrame {
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
 
+		//AdministrarPersona ad = new AdministrarPersona(direccion);
+		/*try {
+			for (usuario ll : listaDeUsuarios) {
+				if (ll.getNickname().equals(jt_usuario.getText())) {
+					if (ll.getPassword().equals(jp_contraseña.getText())) {
+						//nick = ll.getNickname();
+						ExperiencaUsuario.setModal(true);
+						ExperiencaUsuario.pack();
+						ExperiencaUsuario.setLocationRelativeTo(this);
+						ExperiencaUsuario.setVisible(true);
+					}
+				}
+			}
 
+		} catch (Exception e) {
+			e.printStackTrace();
+		}*/
+		String admin = "admin";
+		String contra = "root";
+		AdministrarPersona ad= new AdministrarPersona("./usuarios.cbm");
+		ad.cargarArchivo();
+		ArrayList<usuario> temp = ad.getListaDeUsuario();
+		for (usuario tempd : temp) {
+			System.out.println(tempd.getNickname() + "---" + tempd.getPassword());
+			if (tempd.getNickname().equals(jt_usuario.getText()) && (tempd.getPassword().equals(jp_contraseña.getText()))) {
+				JOptionPane.showMessageDialog(this, "Ingreso con exito");
+				global = tempd;
+				System.out.println(global + " Entar aqui");
+				ExperiencaUsuario.setModal(true);
+				ExperiencaUsuario.pack();
+				ExperiencaUsuario.setLocationRelativeTo(this);
+				ExperiencaUsuario.setVisible(true);
+
+			} else {
+				JOptionPane.showMessageDialog(this, "Su usarios no existe ");
+			}
+
+		}
     }//GEN-LAST:event_jButton1MouseClicked
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
@@ -260,14 +309,15 @@ public class Principal extends javax.swing.JFrame {
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
 		// TODO add your handling code here:
 		JFileChooser fc = new JFileChooser();
-		fc.setFileFilter(new FileNameExtensionFilter("Social", "doo"));
+		fc.setFileFilter(new FileNameExtensionFilter("usuarios", "cbm"));
 		int opc = fc.showOpenDialog(this);
 		if (opc == JFileChooser.APPROVE_OPTION) {
 			File f = fc.getSelectedFile();
 			direccion = f.getPath();
+			System.out.println(direccion);
 			try {
 				aP.cargarArchivo();
-				user = aP.getListaDeUsuario();
+				listaDeUsuarios = aP.getListaDeUsuario();
 
 				JOptionPane.showMessageDialog(this, "Archivo abierto con exito");
 			} catch (Exception e) {
@@ -290,9 +340,9 @@ public class Principal extends javax.swing.JFrame {
 		if (seleccion == JFileChooser.APPROVE_OPTION) {
 			try {
 				if (jfc.getFileFilter().getDescription().equals("usuarios")) {
-					direccion = jfc.getSelectedFile().getPath() + ".";
+					direccion = jfc.getSelectedFile().getPath() + ".cbm";
 					fichero = new File(direccion);
-					aP.setListaDeUsuario(user);
+					aP.setListaDeUsuario(listaDeUsuarios);
 					aP.escribirArchivo();
 				} else {
 					fichero = jfc.getSelectedFile();
@@ -305,7 +355,7 @@ public class Principal extends javax.swing.JFrame {
 				fw.close();
 			} catch (Exception e) {
 			}
-			JOptionPane.showMessageDialog(this, "nuevo Guardado con exito");
+			JOptionPane.showMessageDialog(this, " nuevo Guardado con exito");
 		}
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
@@ -316,20 +366,16 @@ public class Principal extends javax.swing.JFrame {
 		String contra;
 		String pais;
 		Date fecha;
-
 		nombre = jt_nombre.getText();
 		nick = jt_nickN.getText();
-		contra = jp_contra.getText();
 		pais = (String) cb_paises.getSelectedItem();
 		fecha = jd_fecha.getDate();
-
-		u = new usuario(nombre, nick, pais, pais, fecha, lb_imagenUsuario.getIcon());
-		user.add(u);
-
+		u = new usuario(nombre, nick, jp_contra_login.getText(), pais, fecha, lb_imagenUsuario.getIcon());
+		listaDeUsuarios.add(u);
 		JOptionPane.showMessageDialog(this, "Se agrego con exito su usuario" + new Date());
-		jt_nombre.setText(" ");
-		jt_nickN.setText(" ");
-		jp_contra.setText(" ");
+		jt_nombre.setText("");
+		jt_nickN.setText("");
+		jp_contra_login.setText("");
 		cb_paises.setSelectedIndex(0);
 		jd_fecha.setDate(null);
 		lb_imagenUsuario.setIcon(null);
@@ -372,6 +418,7 @@ public class Principal extends javax.swing.JFrame {
 	}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JDialog ExperiencaUsuario;
     private javax.swing.JComboBox cb_paises;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
@@ -388,19 +435,23 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JPasswordField jPasswordField2;
     private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private com.toedter.calendar.JDateChooser jd_fecha;
-    private javax.swing.JPasswordField jp_contra;
+    private javax.swing.JPasswordField jp_contra_login;
+    private javax.swing.JPasswordField jp_contraseña;
     private javax.swing.JTextField jt_nickN;
     private javax.swing.JTextField jt_nombre;
+    private javax.swing.JTextField jt_usuario;
     private javax.swing.JLabel lb_imagenUsuario;
     // End of variables declaration//GEN-END:variables
-ArrayList<usuario> user = new ArrayList();
+    ArrayList<usuario> listaDeUsuarios = new ArrayList();
 	String direccion = "./usuarios.cbm";
 	AdministrarPersona aP = new AdministrarPersona(direccion);
 	usuario u = new usuario();
+	usuario global;
+	usuario global1;
+	usuario agregarUsuario;
+	usuario aregarUsuario2;
 
 }
